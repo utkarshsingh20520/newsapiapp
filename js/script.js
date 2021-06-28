@@ -1,4 +1,6 @@
-let apikey = "a739f2090b544d16a3a6724a5c7ff582";
+let apikey = "4aee872907603597658f84cf91cd5821";
+ 
+
 
 let country = "in";
 let countryname = "India";
@@ -38,7 +40,7 @@ function load() {
   const xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apikey}`
+    `https://gnews.io/api/v4/top-headlines?country=${country}&token=${apikey}`
   );
 
   xhr.onload = function () {
@@ -51,7 +53,7 @@ function load() {
         let news = `<div class="col-lg-3 col-md-3 col-sm-12 card my-3 px-3">
                           <div class="row" style="border: .5px solid black">
                             <div class="image col-sm-12 p-0">
-                               <img src="${element.urlToImage}" alt="Image is not in the server">
+                               <img src="${element.image}" alt="Image is not in the server">
                              </div>
                             <div class="headingss col-sm-12 p-0">
                                  <p>${element.title}</p>
